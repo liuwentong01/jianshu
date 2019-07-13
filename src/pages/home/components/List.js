@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import {ListItem, ListInfo} from '../style';
+import {ListItem, ListInfo, LoadMore} from '../style';
 import {connect} from 'react-redux';
+import { actionCreators } from "../store";
 
 /*后面添加评论点赞的icon-font */
 class List extends Component {
@@ -8,9 +9,10 @@ class List extends Component {
     return (
       <div>
         {
-          this.props.list.map((item) => {
+          this.props.list.map((item, index) => {
             return (
-              <ListItem key={item.get('id')}>
+              // key值出错先用index
+              <ListItem key={index}>
                 <img className="pic" src={item.get('imgUrl')} alt="图片无法显示" />
                 <ListInfo>
                   <h3 className="title">{item.get('title')}</h3>
@@ -22,11 +24,19 @@ class List extends Component {
             )
           })
         }
+        <LoadMore onClick={() =>this.props.getMoreList(this.props.page)}>更多文字</LoadMore>
       </div>
     );
   }
 }
-const mapState = (state) =>({
-  list: state.get('home').get('articleList')
+const mapState = state => ({
+  list: state.get("home").get("articleList"),
+  page: state.get("home").get("articlePage")
 });
-export default connect(mapState, null)(List);
+const mapDispatch = (dispatch) => ({
+  getMoreList(page){
+    const action = actionCreators.getMoreList(page);
+    dispatch(action);
+  }
+})
+export default connect(mapState, mapDispatch)(List);

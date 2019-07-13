@@ -71,6 +71,18 @@ export const ListInfo = styled.div`
     color: #999;
   }
 `;
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 30px 0;
+  background-color: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+`;
+
 
 
 export const RecomendWrapper = styled.div`
@@ -83,6 +95,7 @@ export const RecomendItem = styled.div`
   background-image: url(${(props) => props.imgUrl});
   background-size: contain;
 `;
+
 
 export const WriterWrapper = styled.div`
   width: 278px;
