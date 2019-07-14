@@ -37,7 +37,7 @@ export const TopicItem = styled.div`
   background-color: #f7f7f7;
   color: black;
   font-size: 14px;
-  border: 1px solid #000;
+  border: 1px solid #dcdcdc;
   /* border-radius: 50%; */
   .topic-pic{
     float: left;   /*浮动不会影响文字*/
@@ -83,8 +83,6 @@ export const LoadMore = styled.div`
   cursor: pointer;
 `;
 
-
-
 export const RecomendWrapper = styled.div`
   margin: 30px 0;
   width: 280px;
@@ -92,7 +90,7 @@ export const RecomendWrapper = styled.div`
 export const RecomendItem = styled.div`
   width: 280px;
   height: 50px;
-  background-image: url(${(props) => props.imgUrl});
+  background-image: url(${(props) => props.imgUrl});/*??？？*/
   background-size: contain;
 `;
 

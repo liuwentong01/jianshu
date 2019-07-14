@@ -4,12 +4,13 @@ import {connect} from 'react-redux';
 
 class Recomend extends PureComponent {
   render() {
+    console.log(this.props.list);
     return (
       <RecomendWrapper>
       {
         this.props.list.map((item) => {
           return (
-            <RecomendItem imgUrl={item.get('recomendUrl')}  id={item.get('id')} />
+            <RecomendItem imgUrl={item.get('recomendUrl')}  key={item.get('id')} />
           );
         })
       }

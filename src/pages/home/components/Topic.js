@@ -9,6 +9,7 @@ class Topic extends PureComponent {
         {
           this.props.list.map(item => {
             return (
+              /**这个get是哪个模块的方法？ */
               <TopicItem key={item.get('id')}>
                 <img
                   className="topic-pic"
