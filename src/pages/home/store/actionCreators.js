@@ -1,9 +1,7 @@
 import axios from "axios";
-import { CHANGE_HOME_DATA } from './constants';
 import {constants} from '../store';
-import {fromJS} from 'immutable'
 const changeHomeData = result => ({
-  type: CHANGE_HOME_DATA,
+  type: constants.CHANGE_HOME_DATA,
   topicList: result.topicList,
   articleList: result.articleList,
   recomendList: result.recomendList
@@ -33,3 +31,7 @@ export const getMoreList = (page) => {
   }
 }
 
+export const toggleTopShow = (show) => ({
+  type: constants.TOGGLE_SCROLL_TOP,
+  show
+})

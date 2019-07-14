@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { CSSTransition} from 'react-transition-group';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {actionCreators}  from './store' ;
 import {
   HeaderWrapper,
@@ -55,14 +56,19 @@ class Header extends Component{
   }
 
   render(){
-    const {focused, handleFocusChange, handleBlurChange, list}  = this.props;
+    const {focused, handleFocusChange, handleBlurChange, list, login}  = this.props;
     return(
       <HeaderWrapper>
-        <Logo href='/' />
+        <Link to="/">
+          <Logo />
+        </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载APP</NavItem>
-          <NavItem className="right">登陆</NavItem>
+          {
+            login ? <NavItem className="right">退出</NavItem> : 
+            <Link to='/login'><NavItem className="right">登陆</NavItem></Link>
+          }
           <NavItem className="right">
             <span className="iconfont">&#xe636;</span>
           </NavItem>
@@ -106,6 +112,7 @@ const mapStateToProps = (state)=>{
     list: state.get('header').get('list'),
     page: state.get('header').get('page'),
     totalPage: state.get('header').get('totalPage'),
+    login: state.get('login').get('login'),
   }
 }
 const mapDispatchToProps = (dispatch)=>{
