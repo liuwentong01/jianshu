@@ -9,6 +9,7 @@ class Write extends PureComponent {
     } 
     else{
       return <Redirect to='/login' />
+      //可以用Link吗
     }
   }
 }

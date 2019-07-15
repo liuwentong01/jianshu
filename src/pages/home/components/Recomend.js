@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 class Recomend extends PureComponent {
   render() {
-    console.log(this.props.list);
     return (
       <RecomendWrapper>
       {

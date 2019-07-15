@@ -12,7 +12,7 @@ class Login extends PureComponent {
         <LoginBox>
           <Input placeholder='账号' ref={(input) => {this.account = input} }/>
           <Input placeholder='密码' type="password" ref={(input) => {this.password = input} }/>
-          <Button onClick={()=>this.props.login(this.account, this.password)}>提交</Button>
+          <Button onClick={()=>this.props.login(this.account.value, this.password.value)}>提交</Button>
         </LoginBox>
         </LoginWrapper>
       );  
@@ -27,6 +27,7 @@ const mapState = (state) => ({
 })
 const mapDispatch = (dispatch) => ({
   login(accountItem, passwordItem){
+    //console.log(accountItem, passwordItem);
     dispatch(actionCreators.login(accountItem, passwordItem));
   }
 });
