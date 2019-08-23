@@ -5,7 +5,6 @@ import {DetailWrapper, Header, Content} from './style';
 
 class Detail extends PureComponent {
   componentDidMount(){
-    console.log(111);
     this.props.getDetail(this.props.match.params.id);
   }
   render() {

@@ -6,7 +6,7 @@ const ChangeList = (data) => ({
   type: constants.CHANGE_LIST,
   data: fromJS(data),
   totalPage: Math.ceil(data.length / 10)
-});//自己用的，没必要导出
+});
 
 export const searchFocus = () => ({
   type: constants.SEARCH_FOCUSED

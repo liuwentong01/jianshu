@@ -23,7 +23,7 @@ import {
 class Header extends Component{
 
   getInfoList (){
-    const {focused, list, totalPage, page, mouseIn, handleMouseEnter, handleMouseLeave, handlePageChange}  = this.props;
+    const {focused, list, totalPage, page, mouseIn, handleMouseEnter, handleMouseLeave, handlePageChange} = this.props;
     const jsList = list.toJS();
     const pageList = [];
     if(jsList.length){

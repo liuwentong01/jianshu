@@ -27,7 +27,6 @@ const mapState = (state) => ({
 })
 const mapDispatch = (dispatch) => ({
   login(accountItem, passwordItem){
-    //console.log(accountItem, passwordItem);
     dispatch(actionCreators.login(accountItem, passwordItem));
   }
 });

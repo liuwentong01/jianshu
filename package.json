@@ -31,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "socket.io-client": "^2.2.0"
   }
 }
