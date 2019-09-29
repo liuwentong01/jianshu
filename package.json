@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.19.0",
+=======
+    "axios": "^0.18.1",
+>>>>>>> 7b98b99af75dd777774118dd5948cc2591de730a
     "immutable": "^4.0.0-rc.12",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
